@@ -51,11 +51,11 @@ let obj = {
 
 let deepCloneArr = deepClone(arr);
 
-arr.unshift(0);
-console.log('arr: ', arr);
-console.log('deepCloneArr: ', deepCloneArr);
+// arr.unshift(0);
+// console.log('arr: ', arr);
+// console.log('deepCloneArr: ', deepCloneArr);
 
-let deepCloneObj = deepClone(obj);
-obj.height = 180;
-console.log('obj: ', obj);
-console.log('deepCloneObj: ', deepCloneObj);
+// let deepCloneObj = deepClone(obj);
+// obj.height = 180;
+// console.log('obj: ', obj);
+// console.log('deepCloneObj: ', deepCloneObj);

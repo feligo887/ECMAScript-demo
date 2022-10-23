@@ -1,1 +1,1 @@
-import './deepClone';
+import './ES5_ES6/deepClone';
