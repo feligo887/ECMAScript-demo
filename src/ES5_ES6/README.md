@@ -102,9 +102,7 @@ console.log('arr: ', arr);// [1,'test','test',4,5];
 ### 扩展运算符与rest参数
 - 扩展运算符:  把数组或者类数组展开变成用‘,’隔开的值
 - rest参数: 把逗号隔开的值，变成数组
-```
-npm run build
-```
+
 ### 箭头函数
 - 自身没有this，而是继承父级的this
 - 不可以当作构造函数
@@ -169,4 +167,45 @@ let obj = JSON.parse('{"a": "hello", "b": "world"}')
 let str = JSON.stringify(obj)
 // console.log(obj)
 ```
-递归深拷贝：src/ES5_ES6/deepClone.js
+    递归深拷贝 见：src/ES5_ES6/deepClone.js
+
+### 类与继承
+- ES5中的类与继承
+
+    见：src/ES5_ES6/ES5_class.js
+
+- ES6中的类与继承
+    见：src/ES5_ES6/ES6_class.js
+    - class 语法糖：类声明
+    - extends 语法糖：继承
+    - spuer 语法糖：子类继承父类的属性
+    - static 语法糖：静态属性（方法）的声明
+    - constructor 语法糖：类里面的构造函数
+    - get/set 对属性进行拦截
+
+    #### 静态属性（方法）和实力属性（方法）的区别：
+    1. 静态属性（方法）是声明在类里面的
+    2. 实例属性（方法）是声明在构造函数里面的
+    3. 静态属性（方法）不需要类实例化且和实例属性（方法）不相通
+    4. 静态属性（方法）的this是指向类本身
+    5. 实例属性（方法）的this是指向实例化的对象上
+
+### set 数据结构
+- Set 是唯一值的集合。
+- 每个值在 Set 中只能出现一次。
+- - *Set的值只能唯一，所以能别去重（基本类型），引用类型因为存储机制，Set的特性不能被很好的运用。*
+- 一个 Set 可以容纳任何数据类型的任何值。
+
+### 数值扩展
+- Number.isFinite(n)： 判断n是否是有限数值
+- Number.isNaN(n)： 判断n是否是NaN
+- Number.parseInt(5.5)： 取整数
+- Number.parseFloat(5.5)： 取浮点数
+- Number.isInteger(5)： 判断是否是整数
+- Math.trunc(5)： 去除小数，返回整数（存在隐式转换）
+- Math.sign(1)： 判断参数是正书or负数or0（存在隐式转换）
+
+
+
+
+
