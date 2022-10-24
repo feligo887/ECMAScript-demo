@@ -13,7 +13,7 @@ const b;
 
 - 暂时性死区
 
-*暂时性死区：不能在变量声明之前使用变量*
+- - *暂时性死区：不能在变量声明之前使用变量*
 
 - 块级作用域
 
@@ -97,7 +97,7 @@ arr.fill('test'.1,3);
 console.log('arr: ', arr);// [1,'test','test',4,5];
 
 ```
-- includes(): 返回Boolean，能检测NAN。
+- includes(): 返回Boolean，能检测NaN。
 
 ### 扩展运算符与rest参数
 - 扩展运算符:  把数组或者类数组展开变成用‘,’隔开的值
