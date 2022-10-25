@@ -213,4 +213,13 @@ let str = JSON.stringify(obj)
 - Reflect.ownKeys()
 - ...
 
+### Iterator 迭代器
+- 让不支持遍历的结构可以遍历
+
+### Module 模块化
+- export： 命名倒出一个文件能倒出多次，必须使用{} 包含
+- import：倒入文件
+- as： 倒出设置别名
+- export default： 默认带出，一个倒出文件。只能有一个磨人倒出
+
 
