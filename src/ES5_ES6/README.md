@@ -205,7 +205,12 @@ let str = JSON.stringify(obj)
 - Math.trunc(5)： 去除小数，返回整数（存在隐式转换）
 - Math.sign(1)： 判断参数是正书or负数or0（存在隐式转换）
 
-
-
+### Reflect对象
+#### Reflect对象 约等于 Object对象
+- Reflect.apply()
+- Reflect.defineProperty()
+- Reflect.has()
+- Reflect.ownKeys()
+- ...
 
 
