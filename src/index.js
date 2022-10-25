@@ -1,1 +1,1 @@
-import './ES5_ES6/proxy.js';
+import './ES5_ES6/promise.js';
