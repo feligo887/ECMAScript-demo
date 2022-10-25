@@ -1,1 +1,1 @@
-import './ES5_ES6/promise.js';
+import './ES5_ES6/generator.js';
