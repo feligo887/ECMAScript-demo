@@ -97,7 +97,6 @@ arr.fill('test'.1,3);
 console.log('arr: ', arr);// [1,'test','test',4,5];
 
 ```
-- includes(): 返回Boolean，能检测NaN。
 
 ### 扩展运算符与rest参数
 - 扩展运算符:  把数组或者类数组展开变成用‘,’隔开的值
