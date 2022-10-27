@@ -39,3 +39,33 @@ const res = arr.flatMap(x => x)
 console.log(res) // [1, 2, 3, 4, 5, 6, [7, 8, 9, [10, 11, 12]]]
 
 ```
+### try cath 扩展
+- cath后面的（）变为可选项
+```
+
+// before
+    try {
+        return true
+    } catch (e){
+        console.log('e: ', e)
+        return false
+    }
+
+// now
+    try {
+        return true
+    } catch {
+        return false
+    }
+
+```
+
+### Symbol扩展
+- Symbol.prototype.description: 返回一个只读的Symbol描述
+```
+const s = Symbol('imooc')
+console.log(s.description) // imooc 只读属性
+
+const s2 = Symbol()
+console.log(s2.description) // undefined
+```
