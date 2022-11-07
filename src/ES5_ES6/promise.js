@@ -92,13 +92,13 @@ class KPromise {
         while(this.rejectedCallback.length) this.rejectedCallback.shift()();
     }
 
-    then = (onFulfilled,onRejected) => {
+    then = (resolveCallback,rejectedCallback) => {
 
         //  用于  .then().then().then(val); 空值 连续调用 当 .then() 使用的时候返回的是一个Promise 成功或者失败的信息。
 
-        onFulfilled = onFulfilled ? onFulfilled : success => success;
+        resolveCallback = resolveCallback ? resolveCallback : success => success;
 
-        onRejected = onRejected ? onRejected : error => {throw error};
+        rejectedCallback = rejectedCallback ? rejectedCallback : error => {throw error};
 
         //  返回 new KPromise 本身 可以让.then() 链式调用
 
@@ -114,7 +114,7 @@ class KPromise {
                     try{
 
                         //  Promise 变为成功时，调用病传递出数据
-                        let successData = onFulfilled(this.successData);
+                        let successData = resolveCallback(this.successData);
 
                         // resolve(successData);
 
@@ -134,7 +134,7 @@ class KPromise {
                     try{
 
                         //  Promise 变为失败时，调用病传递出数据
-                        let errorData = onRejected(this.errorMsg);;
+                        let errorData = rejectedCallback(this.errorMsg);;
 
                         privateResolvePromise(resolvePromise,errorData,resolve,reject);
 
@@ -152,8 +152,8 @@ class KPromise {
     
                 /** 
                  * 单个.then（）调用
-                 * this.fulfilledCallback = onFulfilled;
-                 * this.rejectedCallback = onRejected;
+                 * this.fulfilledCallback = resolveCallback;
+                 * this.rejectedCallback = rejectedCallback;
                 **/
     
                 this.fulfilledCallback.push(() => {
@@ -163,7 +163,7 @@ class KPromise {
                         try{
     
                             //  Promise 变为成功时，调用病传递出数据
-                            let successData = onFulfilled(this.successData);
+                            let successData = resolveCallback(this.successData);
         
                             privateResolvePromise(resolvePromise,successData,resolve,reject);
     
@@ -181,7 +181,7 @@ class KPromise {
                         try{
     
                             //  Promise 变为失败时，调用病传递出数据
-                            let errorData = onRejected(this.errorMsg);;
+                            let errorData = rejectedCallback(this.errorMsg);;
     
                             privateResolvePromise(resolvePromise,errorData,resolve,reject);
     
@@ -210,8 +210,8 @@ class KPromise {
         });
     }
 
-    catch = (onRejected) => {
-        return this.then( undefined,onRejected);
+    catch = (rejectedCallback) => {
+        return this.then( undefined,rejectedCallback);
     }
 
 
